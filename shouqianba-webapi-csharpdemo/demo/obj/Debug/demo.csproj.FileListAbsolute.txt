@@ -1,0 +1,10 @@
+d:\documents\visual studio 2015\Projects\demo\demo\bin\Debug\demo.exe.config
+D:\Documents\Visual Studio 2015\Projects\demo\demo\bin\Debug\demo.exe
+D:\Documents\Visual Studio 2015\Projects\demo\demo\bin\Debug\demo.pdb
+D:\Documents\Visual Studio 2015\Projects\demo\demo\bin\Debug\Newtonsoft.Json.dll
+D:\Documents\Visual Studio 2015\Projects\demo\demo\bin\Debug\Newtonsoft.Json.xml
+D:\Documents\Visual Studio 2015\Projects\demo\demo\obj\Debug\demo.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2015\Projects\demo\demo\obj\Debug\demo.Properties.Resources.resources
+D:\Documents\Visual Studio 2015\Projects\demo\demo\obj\Debug\demo.csproj.GenerateResource.Cache
+D:\Documents\Visual Studio 2015\Projects\demo\demo\obj\Debug\demo.exe
+D:\Documents\Visual Studio 2015\Projects\demo\demo\obj\Debug\demo.pdb
