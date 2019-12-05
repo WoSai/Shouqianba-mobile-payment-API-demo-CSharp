@@ -20,7 +20,7 @@ namespace demo
             
             Jparams.Add(new JProperty("appid", appid));                 //appid，必填
             Jparams.Add(new JProperty("code", code));                   //激活码，必填
-            Jparams.Add(new JProperty("device_id", "CNHM0001POS01"));   //客户方收银终端序列号，需保证同一appid下唯一，必填。为方便识别，建议格式为“品牌名+门店编号+‘POS’+POS编号“
+            Jparams.Add(new JProperty("device_id", "CN0001POS01"));   //客户方收银终端序列号，需保证同一appid下唯一，必填。为方便识别，建议格式为“品牌名+门店编号+‘POS’+POS编号“
             Jparams.Add(new JProperty("client_sn", "POS01"));           //客户方终端编号，一般客户方或系统给收银终端的编号，必填
             Jparams.Add(new JProperty("name", "1号款台"));               //客户方终端名称，必填
             Jparams.Add(new JProperty("os_info",""));
@@ -55,9 +55,9 @@ namespace demo
             JObject Jparams = new JObject();
 
             Jparams.Add(new JProperty("terminal_sn", terminal_sn));
-            Jparams.Add(new JProperty("device_id", "CNHM0001POS01"));
+            Jparams.Add(new JProperty("device_id", "CN0001POS01"));
             Jparams.Add(new JProperty("os_info", ""));
-            Jparams.Add(new JProperty("sdk_version", "C#"));
+            Jparams.Add(new JProperty("sdk_version", ""));
 
             string sign = getSign(Jparams.ToString() + terminal_key);
             string result = HttpUtil.httpPost(url, Jparams.ToString(), sign, terminal_sn);
@@ -228,38 +228,6 @@ namespace demo
             return null;
         }
 
-        public static JObject revoke(string terminal_sn,string terminal_key)
-        {
-            string url = api_domain + "/upay/v2/revoke";
-            JObject Jparams = new JObject();
-
-            Jparams.Add(new JProperty("terminal_sn", terminal_sn));
-            Jparams.Add(new JProperty("sn", ""));
-            Jparams.Add(new JProperty("client_sn", ""));
-
-            string sign = getSign(Jparams.ToString() + terminal_key);
-            string result = HttpUtil.httpPost(url, Jparams.ToString(), sign, terminal_sn);
-            JObject retObj = JObject.Parse(result);
-
-            string resCode = retObj["result_code"].ToString();
-            Console.WriteLine("返回码：" + resCode);
-            if (resCode.Equals("200"))
-            {
-
-                string responseStr = retObj["biz_response"].ToString();
-                JObject newTerminal = JObject.Parse(responseStr);
-                // JObject response = (JObject)newTerminal.GetValue("data");
-                Console.WriteLine("返回信息:" + newTerminal);
-                return newTerminal;
-            }
-            else
-            {
-                string errorCode = retObj["error_code"].ToString();
-                string errorMsg = retObj["error_message"].ToString();
-                Console.WriteLine("错误码：" + errorCode + "\n" + "返回信息：" + errorMsg);
-            }
-            return null;
-        }
 
         public static JObject precreate(string terminal_sn,string terminal_key)
         {
