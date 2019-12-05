@@ -36,7 +36,6 @@ namespace demo
                     WoSaiPay.refund(newTerminal_sn, newTterminal_key);
                     WoSaiPay.query(newTerminal_sn, newTterminal_key);
                     WoSaiPay.cancel(newTerminal_sn, newTterminal_key);
-                    WoSaiPay.revoke(newTerminal_sn, newTterminal_key);
                     WoSaiPay.precreate(newTerminal_sn, newTterminal_key);
                 }
             }
