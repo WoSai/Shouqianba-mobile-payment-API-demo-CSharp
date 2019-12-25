@@ -20,7 +20,7 @@ namespace demo
             
             Jparams.Add(new JProperty("appid", appid));                 //appid，必填
             Jparams.Add(new JProperty("code", code));                   //激活码，必填
-            Jparams.Add(new JProperty("device_id", "CN0001POS01"));   //客户方收银终端序列号，需保证同一appid下唯一，必填。为方便识别，建议格式为“品牌名+门店编号+‘POS’+POS编号“
+            Jparams.Add(new JProperty("device_id", ""));   //客户方收银终端序列号，需保证同一appid下唯一，必填。为方便识别，建议格式为“品牌名+门店编号+‘POS’+POS编号“
             Jparams.Add(new JProperty("client_sn", "POS01"));           //客户方终端编号，一般客户方或系统给收银终端的编号，必填
             Jparams.Add(new JProperty("name", "1号款台"));               //客户方终端名称，必填
             Jparams.Add(new JProperty("os_info",""));
@@ -55,7 +55,7 @@ namespace demo
             JObject Jparams = new JObject();
 
             Jparams.Add(new JProperty("terminal_sn", terminal_sn));
-            Jparams.Add(new JProperty("device_id", "CN0001POS01"));
+            Jparams.Add(new JProperty("device_id", ""));
             Jparams.Add(new JProperty("os_info", ""));
             Jparams.Add(new JProperty("sdk_version", ""));
 
