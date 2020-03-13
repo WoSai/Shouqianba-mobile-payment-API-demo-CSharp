@@ -12,7 +12,7 @@ namespace demo
 {
     class WoSaiPay
     {
-        public static string api_domain= "https://api.shouqianba.com";
+        public static string api_domain= "https://vsi-api.shouqianba.com";
         public static JObject activate(string vendor_sn,string vendor_key,string appid,string code)
         {
             string url = api_domain + "/terminal/activate";
