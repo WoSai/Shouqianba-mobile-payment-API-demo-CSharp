@@ -18,7 +18,7 @@ namespace demo
             string url = api_domain + "/terminal/activate";
             JObject Jparams = new JObject();
             
-            Jparams.Add(new JProperty("appid", appid));                 //appid，必填
+            Jparams.Add(new JProperty("app_id", appid));                 //appid，必填
             Jparams.Add(new JProperty("code", code));                   //激活码，必填
             Jparams.Add(new JProperty("device_id", ""));   //客户方收银终端序列号，需保证同一appid下唯一，必填。为方便识别，建议格式为“品牌名+门店编号+‘POS’+POS编号“
             Jparams.Add(new JProperty("client_sn", "POS01"));           //客户方终端编号，一般客户方或系统给收银终端的编号，必填
